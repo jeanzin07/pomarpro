@@ -1,0 +1,50 @@
+<app-menu></app-menu>
+<div class="pagina">
+    <header>
+        <h1>Adiministração| Cadastro de Material </h1>
+    </header>
+    <form [formGroup]="formulario">
+        <div>
+            <mat-form-field appearance="outline" color="accent">
+                <mat-label>Nome</mat-label>
+                <input matInput formControlName="nome">
+            </mat-form-field>
+            <mat-form-field appearance="outline" color="accent">
+                <mat-label>Valor</mat-label>
+                <input matInput formControlName="valor">
+            </mat-form-field>
+            <mat-form-field appearance="outline" color="accent">
+                <mat-label>Tipo</mat-label>
+                <input matInput formControlName="tipo">
+            </mat-form-field>
+        </div>
+        <mat-form-field appearance="outline" color="accent" class="grande">
+            <mat-label>Fornecedor</mat-label>
+            <input matInput formControlName="fornecedor">
+        </mat-form-field>
+        <div class="controles">
+            <button mat-raised-button [disabled]="formulario.enabled"(click)="onIncluir()">Incluir</button>
+            <button mat-raised-button [disabled]="formulario.invalid"(click)="onSalvar()">Salvar</button>
+            <button mat-raised-button [disabled]="formulario.disabled"(click)="onCancelar()">Cancelar</button>
+        </div>
+    </form>
+    <div class="relatorio">
+        <h2>Materiais</h2>
+        <table>
+            <tr>
+                <th>Ação</th>
+                <th>Nome</th>
+                <th>Valor</th>
+                <th>Tipo</th>
+                <th>Fornecedor</th>
+           
+           <tr *ngFor="let material of relatorio">
+                <td><button>Excluir</button></td>
+                <td>{{material.nome}} {{material.valor}}</td>
+                <td>{{material.fornecedor}}</td>
+            </tr>
+        </table>
+    
+    </div>
+    
+</div>

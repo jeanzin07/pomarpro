@@ -1,0 +1,28 @@
+<div class="fundo">
+    <section class="login">
+
+
+
+        <header>
+            <img src="assets/img/Pomar_pro jean.png">
+    
+        </header>
+        <form [formGroup]="form" >
+            <input placeholder="Usuário" formControlName="usuario">
+            <input placeholder="Senha" formControlName="senha">
+            <p class="erro">{{msg_erro}}</p>
+            <button (click)="onLogin()">
+                Entrar
+            </button>
+        </form>
+        <footer>
+    
+            <p>Desenvolvido por Jean </p>
+    
+        </footer>
+    
+    </section>
+</div>
+
+
+

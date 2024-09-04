@@ -1,0 +1,75 @@
+<app-menu></app-menu>
+<div class="pagina">
+    <header>
+        <h1>Adiministração| Cadastro de Arovore </h1>
+    </header>
+    <form [formGroup]="formulario">
+        <div>
+            <mat-form-field appearance="outline" color="accent">
+                <mat-label>Defensivo</mat-label>
+                <input matInput formControlName="defensivo">
+            </mat-form-field>
+            <mat-form-field appearance="outline" color="accent">
+                <mat-label>Fertilizante</mat-label>
+                <input matInput formControlName="fertilizante">
+            </mat-form-field>
+            <mat-form-field appearance="outline" color="accent">
+                <mat-label>Última Verificação</mat-label>
+                <input matInput formControlName="ultima verificação" [matDatepicker]="ultima_verif">
+            <mat-datepicker-toggle  matSuffix [for]="ultima_verif"></mat-datepicker-toggle>
+            <mat-datepicker #ultima_verif></mat-datepicker>
+            </mat-form-field>
+        <mat-form-field appearance="outline" color="accent" class="grande">
+            <mat-label>Tipo</mat-label>
+            <input matInput formControlName="tipo">
+        </mat-form-field>
+        <mat-form-field appearance="outline" color="accent" class="grande">
+            <mat-label>Linha</mat-label>
+            <input matInput formControlName="tipo">
+        </mat-form-field>
+        <mat-form-field appearance="outline" color="accent" class="grande">
+            <mat-label>Coluna</mat-label>
+            <input matInput formControlName="tipo">
+        </mat-form-field>
+        <mat-form-field appearance="outline" color="accent" class="grande">
+            <mat-label>Situação</mat-label>
+            <input matInput formControlName="situacao">
+        </mat-form-field>
+        <mat-form-field appearance="outline" color="accent" class="grande">
+            <mat-label>Pomar</mat-label>
+            <input matInput formControlName="pomar">
+        </mat-form-field>
+        <div class="controles">
+            <button mat-raised-button [disabled]="formulario.enabled"(click)="onIncluir()">Incluir</button>
+            <button mat-raised-button [disabled]="formulario.invalid"(click)="onSalvar()">Salvar</button>
+            <button mat-raised-button [disabled]="formulario.disabled"(click)="onCancelar()">Cancelar</button>
+        </div>
+    
+    <div class="relatorio">
+        <h2>Arvore</h2>
+        <table>
+            <tr>
+                <th>Ação</th>
+                <th>Defensivo</th>
+                <th>Fertilizante</th>
+                <th>Última Verificação</th>
+                <th>Linha</th>
+                <th>Coluna</th>
+                <th>Tipo</th>
+                <th>Situação</th>
+                <th>Pomar</th>
+           
+           <tr *ngFor="let arvore of relatorio">
+                <td><button>Excluir</button></td>
+                <td>{{arvore.defensivo}}</td>
+                <td> {{arvore.fertilizante}}</td>
+                <td>{{arvore.ultima_verificacao}}</td>
+                <td>{{arvore.linha}}</td>
+                <td>{{arvore.coluna}}</td>
+                <td>{{arvore.tipo}}</td>
+                <td>{{arvore.situacao}}</td>
+                <td>{{arvore.pomar}}</td>
+            </tr>
+        </table>
+    
+    </div>

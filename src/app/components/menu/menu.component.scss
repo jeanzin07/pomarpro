@@ -1,0 +1,90 @@
+/* Estilos para o cabeçalho */
+section {
+    background-color: #ff8903;
+    color: #000000;
+    text-align: center;
+    width:15vw;
+    height:100vh;
+    position: absolute;
+    left:0;
+    top:0;
+}
+
+section h1 {
+    margin-bottom: 10px;
+}
+
+section nav ul {
+    list-style-type: none;
+}
+
+section nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+section nav ul li a {
+    color: #000000;
+    text-decoration: none;
+}
+
+section nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Estilos para o conteúdo principal */
+main {
+    padding: 20px;
+}
+
+section {
+    background-color:orange;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Estilos para o rodapé */
+footer {
+    background-color: #333;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+img{
+    width:17vw;
+    height:270px;
+}
+nav{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    gap: 15px;
+}
+details{
+    font-family:arial ;
+    summary{
+border: #2bc904a9 solid;
+border-radius:5px;
+
+    
+    }
+    
+    div{
+        display:flex;
+        flex-direction: column;
+        padding: 10px;
+        gap: 15px;
+    }
+}
+
+a{
+    font-family: Arial;
+    border: #2bc904a9 solid;
+    border-radius: 5px;
+}
+

@@ -1,0 +1,47 @@
+<app-menu></app-menu>
+<div class="pagina">
+    <header>
+        <h1>Adiministração| Cadastro </h1>
+    </header>
+    <form [formGroup]="formulario">
+        <div>
+            <mat-form-field appearance="outline" color="accent">
+                <mat-label>Apelido</mat-label>
+                <input matInput formControlName="apelido">
+            </mat-form-field>
+            <mat-form-field appearance="outline" color="accent">
+                <mat-label>Num_linha</mat-label>
+                <input matInput formControlName="num_linha">
+            </mat-form-field>
+            <mat-form-field appearance="outline" color="accent">
+                <mat-label>Num_coluna</mat-label>
+                <input matInput formControlName="num_coluna">
+            </mat-form-field>
+        </div>
+        <div class="controles">
+            <button mat-raised-button [disabled]="formulario.enabled"(click)="onIncluir()">Incluir</button>
+            <button mat-raised-button [disabled]="formulario.invalid"(click)="onSalvar()">Salvar</button>
+            <button mat-raised-button [disabled]="formulario.disabled"(click)="onCancelar()">Cancelar</button>
+        </div>
+    </form>
+    <div class="relatorio">
+        <h2>Cadastro</h2>
+        <table>
+            <tr>
+                <th>Ação</th>
+                <th>Apelido</th>
+                <th>Num_Linha</th>
+                <th>Num_Coluna</th>
+              
+           
+           <tr *ngFor="let pomar of relatorio">
+                <td><button>Excluir</button></td>
+                <td>{{pomar.apelido}} </td>
+                <td>{{pomar.num_linha}}</td>
+                <td>{{pomar.num_coluna}}</td>
+            </tr>
+        </table>
+    
+    </div>
+    
+</div>

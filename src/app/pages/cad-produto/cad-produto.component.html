@@ -1,0 +1,51 @@
+<div class="pagina">
+    <header>
+        <h1>Adiministração| Produto </h1>
+    </header>
+    <form [formGroup]="formulario">
+        <div>
+            <mat-form-field appearance="outline" color="accent">
+                <mat-label>Decrição</mat-label>
+                <input matInput formControlName="descricao">
+            </mat-form-field>
+            <mat-form-field appearance="outline" color="accent">
+                <mat-label>Unid_Medida</mat-label>
+                <input matInput formControlName="unid_medida">
+            </mat-form-field>
+            <mat-form-field appearance="outline" color="accent">
+                <mat-label>Valor</mat-label>
+                <input matInput formControlName="valor">
+            </mat-form-field>
+        </div>
+        <mat-form-field appearance="outline" color="accent" class="grande">
+            <mat-label>Tipo</mat-label>
+            <input matInput formControlName="tipo">
+        </mat-form-field>
+        <div class="controles">
+            <button mat-raised-button [disabled]="formulario.enabled"(click)="onIncluir()">Incluir</button>
+            <button mat-raised-button [disabled]="formulario.invalid"(click)="onSalvar()">Salvar</button>
+            <button mat-raised-button [disabled]="formulario.disabled"(click)="onCancelar()">Cancelar</button>
+        </div>
+    </form>
+    <div class="relatorio">
+        <h2>Podrutos</h2>
+        <table>
+            <tr>
+                <th>Ação</th>
+                <th>Descrição</th>
+                <th>Unid_Medida</th>
+                <th>Valor</th>
+                <th>Tipo</th>
+           
+           <tr *ngFor="let produto of relatorio">
+                <td><button>Excluir</button></td>
+                <td>{{produto.descricao}}</td>
+                <td> {{produto.unid_medida}}</td>
+                <td>{{produto.valor}}</td>
+                <td> {{produto.tipo}}</td>
+            </tr>
+        </table>
+    
+    </div>
+    
+</div>
